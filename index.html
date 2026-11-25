@@ -2,108 +2,279 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CyberGuards – AI | IA segura, ética y responsable</title>
-  <meta name="description" content="CyberGuards acompaña a las organizaciones a adoptar la inteligencia artificial de forma segura, ética y responsable: entrenamiento ético, ciberresiliencia y cumplimiento normativo.">
-  <meta name="theme-color" content="#F8FAF7">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CyberGuards – AI | Ciberseguridad para la inteligencia artificial</title>
+  <meta name="description" content="Entrenamos, blindamos y auditamos tus sistemas de inteligencia artificial: entrenamiento ético y control del contexto, ciberresiliencia y cumplimiento del Reglamento Europeo de IA, NIS2 y RGPD.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
   <meta property="og:type" content="website">
   <meta property="og:title" content="CyberGuards – AI">
-  <meta property="og:description" content="IA segura, ética y responsable para organizaciones que quieren crecer sin perder el control.">
+  <meta property="og:description" content="La IA es tu nueva superficie de ataque. Te ayudamos a protegerla.">
   <meta property="og:locale" content="es_ES">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/atkinson-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/boot.js"></script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/SplitText.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script type="module" src="assets/js/hero3d.js"></script>
+  <script type="module" src="assets/js/morph3d.js"></script>
 </head>
 <body>
   <svg width="0" height="0" class="sr-only" aria-hidden="true">
-    <symbol id="shield" viewBox="0 0 64 72">
-      <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M8 7h48v36L32 66 8 43z"/>
-        <path d="M45 17H19v24l13 12 13-12V31H33"/>
+    <symbol id="cg-shield" viewBox="0 0 64 72">
+      <g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="currentColor" d="M8 7h48v36L32 66 8 43z"/>
+        <path stroke="#FF2D3D" d="M45 17H19v24l13 12 13-12V31H33"/>
       </g>
     </symbol>
   </svg>
 
-  <a class="skip" href="#main">Saltar al contenido</a>
-
-  <div class="sheet hero-sheet">
-    <header class="topbar">
-      <a class="topbar__logo" href="./" aria-label="CyberGuards, inicio">
-        <svg aria-hidden="true"><use href="#shield"/></svg>
-      </a>
-      <span class="topbar__rule" aria-hidden="true"></span>
-      <a class="btn" href="#contacto">Contacto</a>
-    </header>
-
-    <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__copy">
-          <svg class="hero__mark" aria-hidden="true"><use href="#shield"/></svg>
-          <h1 id="hero-title" class="hero__title">CyberGuards&nbsp;–&nbsp;AI</h1>
-          <p class="hero__lead">Ayudamos a las organizaciones a adoptar la inteligencia artificial de forma segura, ética y hecha para durar.</p>
-          <ul class="hero__services">
-            <li><a href="#etica">Entrenamiento Ético y Control del Contexto</a></li>
-            <li><a href="#resiliencia">Alineación Digital y Ciberresiliencia</a></li>
-            <li><a href="#cumplimiento">Cumplimiento Normativo y Asesoramiento</a></li>
-          </ul>
-        </div>
-
-        <svg class="bolt" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M96 0 L4 46 L96 46 L2 100"/>
-        </svg>
-
-        <figure class="visual" data-video="">
-          <canvas class="visual__canvas" aria-hidden="true"></canvas>
-          <figcaption class="sr-only">Animación de una red global de datos protegida.</figcaption>
-        </figure>
-      </section>
-    </main>
+  <div class="loader" aria-hidden="true">
+    <svg class="loader__mark" viewBox="0 0 64 72" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path class="loader__frame" pathLength="1" d="M8 7h48v36L32 66 8 43z"/>
+      <path class="loader__g" pathLength="1" d="M45 17H19v24l13 12 13-12V31H33"/>
+    </svg>
+    <p class="loader__label">CyberGuards</p>
   </div>
 
-  <section class="services wrap" id="servicios" aria-labelledby="servicios-title">
-    <h2 id="servicios-title" class="section-title">Qué hacemos</h2>
-    <dl class="services__list">
-      <div class="service" id="etica">
-        <dt>Entrenamiento Ético y Control del Contexto</dt>
-        <dd>Definimos qué puede ver, aprender y decir cada sistema de IA. Entrenamiento con criterios éticos claros, datos bajo control y respuestas que podéis explicar.</dd>
-      </div>
-      <div class="service" id="resiliencia">
-        <dt>Alineación Digital y Ciberresiliencia</dt>
-        <dd>Alineamos tecnología, personas y procesos para anticipar amenazas, resistir incidentes y recuperar la actividad sin perder la confianza de quien depende de vosotros.</dd>
-      </div>
-      <div class="service" id="cumplimiento">
-        <dt>Cumplimiento Normativo y Asesoramiento</dt>
-        <dd>Os guiamos por el Reglamento Europeo de IA, NIS2 y el RGPD con un plan proporcionado a vuestro tamaño. Sin burocracia innecesaria, con decisiones documentadas.</dd>
-      </div>
-    </dl>
-  </section>
+  <a class="skip" href="#main">Saltar al contenido</a>
 
-  <section class="approach wrap" aria-labelledby="approach-title">
-    <h2 id="approach-title" class="approach__statement">Creemos en una tecnología que protege a las personas, no deja a nadie atrás y está pensada para el largo plazo.</h2>
-    <ul class="approach__principles">
-      <li><strong>Las personas, primero.</strong> Sistemas comprensibles y accesibles para cualquiera que los use.</li>
-      <li><strong>Impacto responsable.</strong> Soluciones eficientes que consumen solo lo que necesitan.</li>
-      <li><strong>Confianza que perdura.</strong> Transparencia, buen gobierno y decisiones que se pueden auditar.</li>
-    </ul>
-  </section>
+  <header class="nav">
+    <a class="nav__brand" href="#top" aria-label="CyberGuards, volver al inicio">
+      <svg aria-hidden="true"><use href="#cg-shield"/></svg>
+      <span>CyberGuards</span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Método</a>
+      <a href="#normativa">Normativa</a>
+      <a href="#principios">Principios</a>
+    </nav>
+    <a class="btn btn--ghost nav__cta" href="#contacto" data-magnetic>Hablemos</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="sr-only">Abrir menú</span>
+      <span class="nav__bars" aria-hidden="true"></span>
+    </button>
+  </header>
 
-  <section class="sheet contact" id="contacto" aria-labelledby="contacto-title">
-    <h2 id="contacto-title" class="contact__title">¿Hablamos?</h2>
-    <p class="contact__text">Contadnos en qué punto estáis y os proponemos el siguiente paso.</p>
-    <a class="btn btn--solid" href="mailto:contacto@cyberguards.ai">contacto@cyberguards.ai</a>
-  </section>
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Menú móvil">
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Método</a>
+      <a href="#normativa">Normativa</a>
+      <a href="#principios">Principios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="menu__mail" href="mailto:contacto@cyberguards.ai">contacto@cyberguards.ai</a>
+  </div>
 
-  <footer class="footer wrap">
-    <p class="wordmark" aria-label="CyberGuards">
-      <span aria-hidden="true">Cyber</span>
-      <svg aria-hidden="true"><use href="#shield"/></svg>
-      <span aria-hidden="true">Guards</span>
-    </p>
-    <div class="footer__meta">
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__inner container">
+        <p class="hero__kicker" data-fade><span class="dot" aria-hidden="true"></span>Ciberseguridad para la inteligencia artificial</p>
+        <h1 class="hero__title" id="hero-title">La IA es tu nueva superficie de ataque.</h1>
+        <p class="hero__lead" data-fade>Entrenamos, blindamos y auditamos tus sistemas de IA para que trabajen a tu favor: seguros, éticos y conformes con la normativa europea.</p>
+        <div class="hero__actions" data-fade>
+          <a class="btn btn--primary" href="#contacto" data-magnetic>Solicitar diagnóstico</a>
+          <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+
+      <ul class="hero__pillars container" data-fade>
+        <li><a href="#etica">Entrenamiento ético y control del contexto</a></li>
+        <li><a href="#resiliencia">Alineación digital y ciberresiliencia</a></li>
+        <li><a href="#cumplimiento">Cumplimiento normativo y asesoramiento</a></li>
+      </ul>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="manifesto container" aria-label="Nuestra visión">
+      <p class="manifesto__text" data-words>Cada modelo que despliegas lee, aprende y decide. Nos aseguramos de que lo haga dentro de los límites que tú defines, sin exponer tus datos, tu reputación ni a las personas que confían en ti.</p>
+    </section>
+
+    <!-- Services with morphing 3D stage -->
+    <section class="services" id="servicios" aria-labelledby="servicios-title">
+      <div class="services__stage" aria-hidden="true">
+        <canvas class="services__canvas"></canvas>
+        <ol class="services__index">
+          <li class="is-active">Contexto</li>
+          <li>Resiliencia</li>
+          <li>Cumplimiento</li>
+        </ol>
+      </div>
+
+      <div class="services__panels">
+        <h2 class="services__title" id="servicios-title" data-lines>Tres frentes. Un solo perímetro.</h2>
+
+        <article class="service" id="etica" data-index="0">
+          <h3 class="service__name">Entrenamiento ético y control del contexto</h3>
+          <p class="service__desc">Definimos qué puede ver, aprender y responder cada sistema de IA. Datos bajo control, decisiones explicables y ningún dato sensible donde no debe estar.</p>
+          <ul class="service__list">
+            <li>Políticas de uso y guardarraíles a medida</li>
+            <li>Red teaming: inyección de prompts y fuga de datos</li>
+            <li>Permisos y control del contexto en RAG y agentes</li>
+          </ul>
+        </article>
+
+        <article class="service" id="resiliencia" data-index="1">
+          <h3 class="service__name">Alineación digital y ciberresiliencia</h3>
+          <p class="service__desc">Alineamos tecnología, procesos y personas para anticipar amenazas, resistir incidentes y recuperar la actividad sin perder la confianza de quien depende de ti.</p>
+          <ul class="service__list">
+            <li>Análisis de riesgos y superficie de ataque</li>
+            <li>Planes de respuesta y continuidad de negocio</li>
+            <li>Formación y simulacros para equipos</li>
+          </ul>
+        </article>
+
+        <article class="service" id="cumplimiento" data-index="2">
+          <h3 class="service__name">Cumplimiento normativo y asesoramiento</h3>
+          <p class="service__desc">Convertimos la regulación europea en un plan claro y proporcionado a tu organización. Menos burocracia, más decisiones documentadas.</p>
+          <ul class="service__list">
+            <li>Reglamento Europeo de Inteligencia Artificial</li>
+            <li>NIS2 y Esquema Nacional de Seguridad</li>
+            <li>RGPD y evaluaciones de impacto</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Method -->
+    <section class="method container" id="metodo" aria-labelledby="metodo-title">
+      <h2 class="section-title" id="metodo-title" data-lines>Cómo trabajamos</h2>
+      <div class="method__track" aria-hidden="true"><span class="method__progress"></span></div>
+      <ol class="method__steps">
+        <li class="step">
+          <span class="step__num">01</span>
+          <h3 class="step__name">Diagnóstico</h3>
+          <p>Mapeamos tus sistemas de IA, sus datos y sus riesgos reales.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">02</span>
+          <h3 class="step__name">Blindaje</h3>
+          <p>Aplicamos controles técnicos, guardarraíles y políticas de uso.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">03</span>
+          <h3 class="step__name">Capacitación</h3>
+          <p>Formamos a tus equipos para usar la IA con criterio y seguridad.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">04</span>
+          <h3 class="step__name">Vigilancia</h3>
+          <p>Revisamos, medimos y adaptamos ante nuevas amenazas y normas.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Stakes -->
+    <section class="stakes container" id="normativa" aria-labelledby="normativa-title">
+      <h2 class="section-title" id="normativa-title" data-lines>Lo que está en juego</h2>
+      <div class="stakes__grid">
+        <figure class="stake">
+          <p class="stake__value"><span data-count="35">35</span>&nbsp;M€</p>
+          <figcaption>
+            <p>o el 7&nbsp;% de la facturación mundial anual: sanción máxima por prácticas de IA prohibidas.</p>
+            <cite>Reglamento (UE) 2024/1689, art. 99</cite>
+          </figcaption>
+        </figure>
+        <figure class="stake">
+          <p class="stake__value"><span data-count="10">10</span>&nbsp;M€</p>
+          <figcaption>
+            <p>o el 2&nbsp;% de la facturación mundial anual: multa máxima para entidades esenciales que incumplan NIS2.</p>
+            <cite>Directiva (UE) 2022/2555, art. 34</cite>
+          </figcaption>
+        </figure>
+        <figure class="stake">
+          <p class="stake__value"><span data-count="24">24</span>&nbsp;h</p>
+          <figcaption>
+            <p>para enviar la alerta temprana de un incidente significativo a la autoridad competente.</p>
+            <cite>Directiva (UE) 2022/2555, art. 23</cite>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Principles -->
+    <section class="principles container" id="principios" aria-labelledby="principios-title">
+      <h2 class="section-title" id="principios-title" data-lines>Seguridad con propósito</h2>
+      <p class="principles__intro">Protegemos la tecnología para proteger a las personas. Así trabajamos, en cada proyecto.</p>
+      <ul class="principles__list">
+        <li>
+          <h3>Las personas, primero</h3>
+          <p>Sistemas comprensibles, accesibles e inclusivos para cualquiera que los use o se vea afectado por ellos.</p>
+        </li>
+        <li>
+          <h3>Eficiencia responsable</h3>
+          <p>Soluciones proporcionadas que consumen solo lo que necesitan, en energía, en datos y en presupuesto.</p>
+        </li>
+        <li>
+          <h3>Confianza que perdura</h3>
+          <p>Transparencia, buen gobierno y decisiones que cualquiera puede auditar, hoy y dentro de diez años.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contacto" aria-labelledby="contacto-title">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="container cta__inner">
+        <h2 class="cta__title" id="contacto-title" data-lines>¿Sabes qué ve, qué aprende y qué filtra tu IA?</h2>
+        <p class="cta__text">Cuéntanos qué sistemas usas. Te proponemos un diagnóstico inicial y el siguiente paso concreto.</p>
+        <a class="btn btn--primary btn--lg" href="mailto:contacto@cyberguards.ai?subject=Diagn%C3%B3stico%20inicial" data-magnetic>Solicitar diagnóstico</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__lead">
+        <p class="footer__claim">Blindamos la inteligencia que mueve tu organización.</p>
+        <a class="footer__mail" href="mailto:contacto@cyberguards.ai">contacto@cyberguards.ai</a>
+      </div>
+      <nav class="footer__cols" aria-label="Pie de página">
+        <div>
+          <h2>Servicios</h2>
+          <ul>
+            <li><a href="#etica">Entrenamiento ético</a></li>
+            <li><a href="#resiliencia">Ciberresiliencia</a></li>
+            <li><a href="#cumplimiento">Cumplimiento normativo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Compañía</h2>
+          <ul>
+            <li><a href="#metodo">Método</a></li>
+            <li><a href="#principios">Principios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Seguridad</h2>
+          <ul>
+            <li><a href=".well-known/security.txt">Divulgación responsable</a></li>
+            <li><a href="#normativa">Marco normativo</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__mark" aria-hidden="true">
+      <p class="footer__word">CyberGuards</p>
+    </div>
+
+    <div class="container footer__bottom">
       <p>© <span data-year>2026</span> CyberGuards – AI</p>
-      <p>Web ligera, sin cookies ni rastreadores.</p>
+      <p class="footer__eco"><span class="dot dot--ok" aria-hidden="true"></span>Sin cookies ni rastreadores. Web ligera y sin servidores de terceros.</p>
+      <a class="footer__top-link" href="#top">Volver arriba</a>
     </div>
   </footer>
 </body>

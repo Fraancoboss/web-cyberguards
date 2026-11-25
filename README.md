@@ -1,34 +1,40 @@
 # CyberGuards – AI · web
 
-Web estática, sin frameworks ni dependencias. Pesa unos 200 KB en total (de ellos, 165 KB son fuentes), no usa cookies ni rastreadores y la animación del hero se pausa cuando no está en pantalla.
+Web estática, sin build ni dependencias externas en producción: todo (fuentes y librerías) se sirve desde el propio dominio. Sin cookies ni rastreadores.
 
 ```
-index.html          Página principal
-404.html            Página de error
-assets/css/         Estilos
-assets/js/main.js   Animación del hero (canvas) y slot opcional de vídeo
-assets/fonts/       Bricolage Grotesque + Atkinson Hyperlegible Next (SIL OFL 1.1, alojadas en local)
-assets/img/         Logo y favicon
-_headers            Cabeceras de seguridad (solo Cloudflare Pages)
+index.html               Página principal
+404.html                 Página de error
+.well-known/security.txt Divulgación responsable de vulnerabilidades (RFC 9116)
+assets/css/styles.css    Sistema visual (negro, rojo señal, Geist)
+assets/js/boot.js        Se ejecuta antes del primer pintado: activa estilos JS e intro
+assets/js/app.js         Movimiento e interacción (GSAP, ScrollTrigger, SplitText, Lenis)
+assets/js/hero3d.js      Escena 3D del hero: escudo metálico, perímetro y ataques bloqueados
+assets/js/morph3d.js     Figura de partículas de servicios: esfera → nudo → escudo
+assets/vendor/           three.js r170 (MIT), GSAP 3.13 (licencia estándar GSAP, gratuita), Lenis 1.3 (MIT)
+assets/fonts/            Geist y Geist Mono (SIL OFL 1.1)
+_headers                 Cabeceras de seguridad (solo Cloudflare Pages)
 ```
 
 ## Probar en local
+
+Los módulos ES no funcionan abriendo el fichero directamente; hace falta un servidor:
 
 ```bash
 python -m http.server 8080
 # http://localhost:8080
 ```
 
-## Usar un vídeo real en el hero
+## Rendimiento y accesibilidad
 
-1. Copia el vídeo a `assets/video/hero.mp4` (recomendado: H.264, 1080p, < 4 MB, sin audio, en bucle).
-2. En `index.html`, cambia `data-video=""` por `data-video="assets/video/hero.mp4"`.
-
-Los bordes se difuminan solos con la máscara CSS. Si no hay vídeo, se usa la animación generativa.
+- Las escenas 3D solo se renderizan cuando están en pantalla y con la pestaña visible.
+- Con «reducir movimiento» activado en el sistema no hay intro, scroll suave ni animaciones: se pinta un fotograma estático.
+- La intro se muestra una vez por sesión.
+- Sin WebGL, el hero muestra el logo con un halo rojo.
 
 ## Cambiar el email de contacto
 
-Busca `contacto@cyberguards.ai` en `index.html` (aparece dos veces).
+Busca `contacto@cyberguards.ai` en `index.html` (todas las apariciones) y en `.well-known/security.txt`.
 
 ---
 

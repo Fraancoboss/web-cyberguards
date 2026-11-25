@@ -1,0 +1,6 @@
+# Divulgación responsable de vulnerabilidades · CyberGuards – AI
+# Si has encontrado una vulnerabilidad en nuestros sistemas, escríbenos.
+# No publiques detalles hasta que hayamos podido corregirla.
+Contact: mailto:contacto@cyberguards.ai
+Expires: 2027-11-26T00:00:00.000Z
+Preferred-Languages: es, en
