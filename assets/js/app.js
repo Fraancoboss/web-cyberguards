@@ -114,7 +114,7 @@
     tl.add(signalHero, intro ? "-=0.85" : 0);
     if (heroSplit) tl.from(heroSplit.lines, { yPercent: 115, duration: 1.3, stagger: 0.09 }, intro ? "-=0.6" : 0.1);
     tl.from(".hero [data-fade]", { y: 18, opacity: 0, duration: 1.1, stagger: 0.09 }, "-=1")
-      .from(nav, { y: -16, opacity: 0, duration: 1 }, "<");
+      .fromTo(nav, { y: -16, opacity: 0, transition: "none" }, { y: 0, opacity: 1, duration: 1, clearProps: "transform,opacity,transition" }, "<");
     done();
 
     // ---------- Section headings ----------

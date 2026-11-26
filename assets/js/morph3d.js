@@ -53,37 +53,40 @@ function init() {
     B.set([(cx + Math.cos(a) * s * k) * 0.46, (cy + u * k) * 0.46, (cz + Math.sin(a) * s * k) * 0.46], i * 3);
   }
 
-  // C: shield frame + G glyph + sparse face
-  const OUTER = [[-1, 1.21], [1, 1.21], [1, -0.29], [0, -1.25], [-1, -0.29]];
-  const INNER = [[-0.8, 1.01], [0.8, 1.01], [0.8, -0.205], [0, -0.973], [-0.8, -0.205]];
-  const G = [[0.542, 0.792], [-0.542, 0.792], [-0.542, -0.208], [0, -0.708], [0.542, -0.208], [0.542, 0.208], [0.042, 0.208]];
-  const segs = [];
-  let total = 0;
-  for (let i = 0; i < G.length - 1; i++) {
-    const l = Math.hypot(G[i + 1][0] - G[i][0], G[i + 1][1] - G[i][1]);
-    segs.push([G[i], G[i + 1], l]);
-    total += l;
-  }
-  const S = 1.25;
+  // C: the CyberGuards mark (white C band + red inverted-G band + folded top face), SVG units
+  const C_BAND = [[0, 75], [-120, 28], [-120, 268], [0, 348], [0, 311], [-88, 252], [-88, 74], [0, 108]];
+  const G_BAND = [[0, 75], [120, 28], [120, 268], [0, 348], [0, 243], [58, 204], [58, 235], [40, 252], [40, 284], [88, 252], [88, 74], [32, 96], [32, 128], [0, 140]];
+  const EDGES = [
+    [C_BAND, 0], [G_BAND, 1],
+  ].flatMap(([poly, g]) => poly.map((p, i) => [p, poly[(i + 1) % poly.length], g]))
+    .map(([a, b, g]) => [a, b, g, Math.hypot(b[0] - a[0], b[1] - a[1])]);
+  const edgeTotal = EDGES.reduce((s, e) => s + e[3], 0);
+  const topY = (x) => { const s = (x + 120) / 240; return 28 + 60 * s * (1 - s); };
+  const ridgeY = (x) => 75 - (47 / 120) * Math.abs(x);
+  const u = 1.15 / 120;
   for (let i = 0; i < N; i++) {
     const r = Math.random();
-    let x, y, z;
-    if (r < 0.62) {
-      do { x = Math.random() * 2 - 1; y = Math.random() * 2.46 - 1.25; } while (!inPoly(x, y, OUTER) || inPoly(x, y, INNER));
-      z = (Math.random() - 0.5) * 0.3;
-    } else if (r < 0.9) {
-      let d = Math.random() * total, k = 0;
-      while (d > segs[k][2]) { d -= segs[k][2]; k++; }
-      const [p0, p1, l] = segs[k], f = d / l;
-      x = p0[0] + (p1[0] - p0[0]) * f + (Math.random() - 0.5) * 0.06;
-      y = p0[1] + (p1[1] - p0[1]) * f + (Math.random() - 0.5) * 0.06;
-      z = (Math.random() - 0.5) * 0.08;
-      glyph[i] = 1;
+    let x, y, z = (Math.random() - 0.5) * 22, g;
+    if (r < 0.5) {
+      do { x = Math.random() * 240 - 120; y = 28 + Math.random() * 320; } while (!inPoly(x, y, C_BAND) && !inPoly(x, y, G_BAND));
+      g = inPoly(x, y, G_BAND) ? 1 : 0;
+    } else if (r < 0.88) {
+      let d = Math.random() * edgeTotal, k = 0;
+      while (d > EDGES[k][3]) { d -= EDGES[k][3]; k++; }
+      const [a, b, gg, l] = EDGES[k], f = d / l;
+      x = a[0] + (b[0] - a[0]) * f + (Math.random() - 0.5) * 4;
+      y = a[1] + (b[1] - a[1]) * f + (Math.random() - 0.5) * 4;
+      z *= 0.4;
+      g = gg;
     } else {
-      do { x = Math.random() * 1.6 - 0.8; y = Math.random() * 2 - 1; } while (!inPoly(x, y, INNER));
-      z = -0.12 + (Math.random() - 0.5) * 0.04;
+      x = Math.random() * 240 - 120;
+      y = topY(x) + Math.random() * (ridgeY(x) - topY(x));
+      g = x > 0 ? 1 : 0;
     }
-    C.set([x * S, y * S, z * S], i * 3);
+    const X = x * u;
+    z += 0.32 * (0.5 - Math.abs(X) / 1.15) / u; // fold: seam forward, edges back
+    C.set([X, -(y - 188) * u, z * u], i * 3);
+    glyph[i] = g;
   }
 
   const geo = new THREE.BufferGeometry();
@@ -123,6 +126,7 @@ function init() {
         float front = smoothstep(-9.5, -5.2, mv.z);
         vRed = max(step(0.965, aRand), aGlyph * s2);
         vA = (0.12 + front * 0.7) * (0.8 + 0.2 * sin(uTime * 3.0 + aRand * 50.0));
+        vA *= 1.0 + 0.7 * s2 * (1.0 - aGlyph);
         gl_PointSize = (1.2 + vRed * 1.3) * uPixel * (7.2 / -mv.z);
       }`,
     fragmentShader: /* glsl */ `
@@ -145,7 +149,9 @@ function init() {
     camera.updateProjectionMatrix();
     const halfH = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.position.z;
     const halfW = halfH * camera.aspect;
-    body.scale.setScalar(Math.min(0.95, Math.min(halfW, halfH) / 2.05));
+    const stackedStage = w >= innerWidth * 0.9; // mobile: short band above the text, labels at its foot
+    body.scale.setScalar(Math.min(0.95, Math.min(halfW, halfH) / (stackedStage ? 2.4 : 2.05)));
+    body.position.y = stackedStage ? halfH * 0.1 : 0;
     mat.uniforms.uPixel.value = renderer.getPixelRatio();
   }
   new ResizeObserver(resize).observe(canvas);

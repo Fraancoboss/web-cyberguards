@@ -149,7 +149,7 @@ cite { font-style: normal; }
   background: var(--bg);
 }
 .intro .loader { display: flex; }
-.loader__mark { width: 72px; height: 81px; }
+.loader__mark { width: 76px; height: 99px; }
 .loader__frame, .loader__g { stroke-dasharray: 1; stroke-dashoffset: 1; }
 .loader__frame { stroke: var(--text); }
 .loader__g { stroke: var(--red); }
@@ -191,7 +191,7 @@ cite { font-style: normal; }
   font-size: 1.05rem;
   letter-spacing: -.02em;
 }
-.nav__brand svg { width: 24px; height: 27px; }
+.nav__brand svg { width: 26px; height: 34px; }
 
 .nav__links {
   display: flex;
