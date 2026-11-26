@@ -2,3 +2,5 @@
 Thumbs.db
 .vscode/
 .idea/
+.wrangler/
+node_modules/

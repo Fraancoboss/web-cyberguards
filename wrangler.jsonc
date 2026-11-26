@@ -1,0 +1,13 @@
+// Despliegue en Cloudflare Workers (static assets). No hay código de servidor:
+// Cloudflare sirve los ficheros del repo tal cual, con _headers y 404.html.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "web-cyberguards",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "observability": { "enabled": true }
+}

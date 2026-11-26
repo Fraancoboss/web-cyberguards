@@ -1,0 +1,10 @@
+# Ficheros del repo que no se publican
+.git
+.github
+node_modules
+.wrangler
+wrangler.jsonc
+.assetsignore
+.gitignore
+.nojekyll
+README.md
