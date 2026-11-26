@@ -12,7 +12,7 @@ assets/js/app.js         Movimiento e interacción (GSAP, ScrollTrigger, SplitTe
 assets/js/hero3d.js      Escena 3D del hero: escudo metálico, perímetro y ataques bloqueados
 assets/js/morph3d.js     Figura de partículas de servicios: esfera → nudo → escudo
 assets/vendor/           three.js r170 (MIT), GSAP 3.13 (licencia estándar GSAP, gratuita), Lenis 1.3 (MIT)
-assets/fonts/            Geist y Geist Mono (SIL OFL 1.1)
+assets/fonts/            Geist, Geist Mono y Chakra Petch (SIL OFL 1.1)
 _headers                 Cabeceras de seguridad (solo Cloudflare Pages)
 ```
 
