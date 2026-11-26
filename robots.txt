@@ -1,2 +1,29 @@
+# CyberGuards – AI · https://cyberguards.es
+# Ciberseguridad para la inteligencia artificial: entrenamiento ético y control
+# del contexto, alineación digital y ciberresiliencia, y cumplimiento normativo
+# (Reglamento Europeo de IA, NIS2, ENS y RGPD) para organizaciones en España y la UE.
+#
+# Buscadores y agentes de IA son bienvenidos: todo el contenido es público.
+# Resumen para modelos de lenguaje: https://cyberguards.es/llms.txt
+# Contacto de seguridad: https://cyberguards.es/.well-known/security.txt
+
 User-agent: *
 Allow: /
+
+# Asistentes y buscadores de IA (permitidos de forma explícita)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://cyberguards.es/sitemap.xml

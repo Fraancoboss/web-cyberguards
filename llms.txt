@@ -1,0 +1,24 @@
+# CyberGuards – AI
+
+> Empresa de ciberseguridad especializada en inteligencia artificial. Entrenamos, blindamos y auditamos los sistemas de IA de las organizaciones para que sean seguros, éticos y conformes con la normativa europea (Reglamento Europeo de IA, NIS2, Esquema Nacional de Seguridad y RGPD).
+
+Ayudamos a organizaciones que usan o van a desplegar IA (asistentes, sistemas RAG, agentes) a controlar qué ve, qué aprende y qué filtra cada sistema. Atendemos en español e inglés.
+
+## Servicios
+
+- [Entrenamiento ético y control del contexto](https://cyberguards.es/#etica): definimos qué puede ver, aprender y responder cada sistema de IA. Incluye políticas de uso y guardarraíles a medida; red teaming de inyección de prompts y fuga de datos; y permisos y control del contexto en RAG y agentes.
+- [Alineación digital y ciberresiliencia](https://cyberguards.es/#resiliencia): alineamos tecnología, procesos y personas para anticipar amenazas, resistir incidentes y recuperar la actividad. Incluye análisis de riesgos y superficie de ataque; planes de respuesta y continuidad de negocio; y formación y simulacros para equipos.
+- [Cumplimiento normativo y asesoramiento](https://cyberguards.es/#cumplimiento): convertimos la regulación europea en un plan claro y proporcionado. Incluye Reglamento Europeo de Inteligencia Artificial (UE) 2024/1689; NIS2, Directiva (UE) 2022/2555, y Esquema Nacional de Seguridad; y RGPD y evaluaciones de impacto.
+
+## Método
+
+- [Cómo trabajamos](https://cyberguards.es/#metodo): 1) Diagnóstico de sistemas, datos y riesgos; 2) Blindaje con controles técnicos y políticas de uso; 3) Capacitación de equipos; 4) Vigilancia continua ante nuevas amenazas y normas.
+
+## Principios
+
+- [Seguridad con propósito](https://cyberguards.es/#principios): las personas, primero; eficiencia responsable; confianza que perdura (transparencia y buen gobierno).
+
+## Contacto
+
+- Email: contacto@cyberguards.es (solicitud de diagnóstico inicial)
+- [Divulgación responsable de vulnerabilidades](https://cyberguards.es/.well-known/security.txt)

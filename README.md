@@ -6,11 +6,14 @@ Web estática, sin build ni dependencias externas en producción: todo (fuentes 
 index.html               Página principal
 404.html                 Página de error
 .well-known/security.txt Divulgación responsable de vulnerabilidades (RFC 9116)
+robots.txt               Permite buscadores y agentes de IA; enlaza sitemap y llms.txt
+llms.txt                 Resumen de la empresa para modelos de lenguaje (llmstxt.org)
+sitemap.xml              Mapa del sitio para buscadores
 assets/css/styles.css    Sistema visual (negro, rojo señal, Geist)
 assets/js/boot.js        Se ejecuta antes del primer pintado: activa estilos JS e intro
 assets/js/app.js         Movimiento e interacción (GSAP, ScrollTrigger, SplitText, Lenis)
-assets/js/hero3d.js      Escena 3D del hero: escudo metálico, perímetro y ataques bloqueados
-assets/js/morph3d.js     Figura de partículas de servicios: esfera → nudo → escudo
+assets/js/hero3d.js      Escena 3D del hero: red de nodos viva y logo en alambre
+assets/js/morph3d.js     Figura de partículas de servicios: esfera → nudo → logo
 assets/vendor/           three.js r170 (MIT), GSAP 3.13 (licencia estándar GSAP, gratuita), Lenis 1.3 (MIT)
 assets/fonts/            Geist, Geist Mono y Chakra Petch (SIL OFL 1.1)
 _headers                 Cabeceras de seguridad (solo Cloudflare Pages)
