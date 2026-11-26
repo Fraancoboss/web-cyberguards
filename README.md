@@ -34,7 +34,7 @@ python -m http.server 8080
 
 ## Cambiar el email de contacto
 
-Busca `contacto@cyberguards.ai` en `index.html` (todas las apariciones) y en `.well-known/security.txt`.
+Busca `contacto@cyberguards.es` en `index.html` (todas las apariciones) y en `.well-known/security.txt`.
 
 ---
 
@@ -59,7 +59,7 @@ Cada `git push` a `main` publica la web automáticamente.
 | AAAA  | @      | 2606:50c0:8001::153      |
 | AAAA  | @      | 2606:50c0:8002::153      |
 | AAAA  | @      | 2606:50c0:8003::153      |
-| CNAME | www    | `<usuario>.github.io.`   |
+| CNAME | www    | `fraancoboss.github.io.` |
 
    Borra antes cualquier registro A/AAAA previo de `@` (por ejemplo, el del parking de DonDominio).
 3. En GitHub → *Settings → Pages*, escribe el dominio y, cuando el certificado esté listo, marca **Enforce HTTPS**.
